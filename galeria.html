@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeria | Instituto Atitude de Desenvolvimento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="gallery-page">
+    <header class="site-header">
+      <div class="container">
+        <div class="top-bar">
+          <div class="brand">
+            <img class="brand-mark" src="src/logo1.png" alt="Logo do Instituto Atitude" />
+            <div class="brand-text">
+              <strong>Instituto Atitude</strong>
+              <small>de Desenvolvimento</small>
+            </div>
+          </div>
+          <button class="menu-toggle" id="menuOpen" aria-label="Abrir menu">
+            <span class="menu-toggle-icon">☰</span>
+          </button>
+        </div>
+        <nav class="menu" id="mobileMenu">
+          <div class="mobile-menu-head">
+            <strong>Instituto Atitude</strong>
+            <button class="menu-close" id="menuClose" aria-label="Fechar menu">×</button>
+          </div>
+          <a href="index.html#quem-somos">Quem Somos</a>
+          <a href="index.html#especialidades">Especialidades</a>
+          <a href="index.html#profissionais">Profissionais</a>
+          <a href="index.html#eventos">Eventos</a>
+          <a href="index.html#contato">Contato</a>
+          <a class="mobile-only-link" href="index.html#localizacao">Localização</a>
+          <a href="galeria.html">Galeria</a>
+        </nav>
+        <button class="menu-overlay" id="menuOverlay" aria-label="Fechar menu"></button>
+      </div>
+    </header>
+
+    <main>
+      <section class="section intro">
+        <div class="container">
+          <h2>Galeria</h2>
+          <p class="section-subtitle">
+            Em breve, este espaço reunirá fotos de atendimentos, ações e momentos especiais do
+            Instituto Atitude.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2026 Instituto Atitude de Desenvolvimento. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>

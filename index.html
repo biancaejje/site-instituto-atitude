@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instituto Atitude de Desenvolvimento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="top-bar">
+          <div class="brand">
+            <img class="brand-mark" src="src/logo1.png" alt="Logo do Instituto Atitude" />
+            <div class="brand-text">
+              <strong>Instituto Atitude</strong>
+              <small>de Desenvolvimento</small>
+            </div>
+          </div>
+          <button class="menu-toggle" id="menuOpen" aria-label="Abrir menu">
+            <span class="menu-toggle-icon">☰</span>
+          </button>
+        </div>
+        <nav class="menu" id="mobileMenu">
+          <div class="mobile-menu-head">
+            <strong>Instituto Atitude</strong>
+            <button class="menu-close" id="menuClose" aria-label="Fechar menu">
+              ×
+            </button>
+          </div>
+          <a href="#quem-somos">Quem Somos</a>
+          <a href="#especialidades">Especialidades</a>
+          <a href="#profissionais">Profissionais</a>
+          <a href="#eventos">Eventos</a>
+          <a href="#contato">Contato</a>
+          <a class="mobile-only-link" href="#localizacao">Localização</a>
+          <a href="galeria.html">Galeria</a>
+        </nav>
+        <button class="menu-overlay" id="menuOverlay" aria-label="Fechar menu"></button>
+      </div>
+    </header>
+
+    <section class="carousel-section" aria-label="Galeria de fotos do Instituto">
+      <div class="carousel-track" id="carouselTrack">
+        <article class="slide active">
+          <img
+            class="slide-image-keyboard"
+            src="src/atividades/img1.jpg"
+            alt="Criança em atendimento com profissional de saúde"
+          />
+          <div class="slide-caption">
+            <h1>Desenvolvimento humano com foco em resultado social</h1>
+            <p>
+              Programas educacionais, formativos e comunitários para fortalecer
+              pessoas, equipes e territórios.
+            </p>
+          </div>
+        </article>
+        <article class="slide">
+          <img
+            src="src/atividades/img6.jpg"
+            alt="Criança em ambiente acolhedor de desenvolvimento"
+          />
+          <div class="slide-caption">
+            <h2>Projetos orientados por dados e impacto real</h2>
+            <p>
+              Planejamento, execução e acompanhamento de ações com indicadores
+              claros e melhoria contínua.
+            </p>
+          </div>
+        </article>
+        <article class="slide">
+          <img
+            src="src/atividades/img8.PNG"
+            alt="Pessoa neurodivergente em contexto de acolhimento"
+          />
+          <div class="slide-caption">
+            <h2>Eventos que conectam conhecimento e prática</h2>
+            <p>
+              Oficinas, seminários e ciclos de formação para transformar
+              desafios em oportunidades.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <button class="carousel-control prev" id="prevSlide" aria-label="Slide anterior">
+        &#10094;
+      </button>
+      <button class="carousel-control next" id="nextSlide" aria-label="Próximo slide">
+        &#10095;
+      </button>
+      <div class="carousel-dots" id="carouselDots" aria-label="Indicadores do carrossel"></div>
+    </section>
+
+    <main>
+      <section class="section welcome-highlight">
+        <div class="container">
+          <div class="welcome-card">
+            <span class="welcome-badge">Atendimento acolhedor e humanizado</span>
+            <h2>Cuidar, desenvolver e fortalecer cada criança e sua família.</h2>
+            <p>
+              Uma jornada completa com especialistas para promover autonomia,
+              aprendizagem e bem-estar no dia a dia.
+            </p>
+            <div class="welcome-actions">
+              <a class="welcome-btn primary" href="#contato">Agendar visita</a>
+              <a class="welcome-btn secondary" href="#especialidades"
+                >Conhecer especialidades</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro" id="quem-somos">
+        <div class="container">
+          <h2>Quem somos</h2>
+          <p class="section-subtitle">
+            Compromisso com o desenvolvimento humano integral
+          </p>
+          <div class="intro-layout">
+            <div class="intro-text">
+              <div class="about-box">
+                <p>
+                  O IAD é uma instituição dedicada à educação e à assistência
+                  social, nascida do compromisso genuíno com o desenvolvimento
+                  humano. Acreditamos que cada pessoa, especialmente cada
+                  criança, carrega um potencial único que merece ser visto,
+                  incentivado e celebrado.
+                </p>
+                <p>
+                  Atuamos com foco no atendimento a pessoas com TEA (Transtorno
+                  do Espectro Autista), promovendo um espaço onde ciência,
+                  tecnologia e afeto caminham juntos. Por meio de projetos,
+                  pesquisas e práticas inovadoras, trabalhamos nas áreas
+                  educacional, cultural, ambiental e de saúde, sempre com um
+                  objetivo central: contribuir para a formação integral e para a
+                  qualidade de vida de crianças, jovens e adultos.
+                </p>
+                <p>
+                  Somos uma ponte entre instituições de ensino, empresas e
+                  comunidades, porque transformar vidas é um trabalho coletivo.
+                </p>
+                <h3>Nossa missão</h3>
+                <p>
+                  Desenvolver ações que melhorem a qualidade de vida das
+                  pessoas, reconhecendo cada ser humano como o maior patrimônio
+                  da sociedade.
+                </p>
+                <h3>Nossos objetivos</h3>
+                <p>
+                  No IAD, acreditamos que saúde, educação e cuidado andam de
+                  mãos dadas. Por isso, estimulamos, apoiamos e incentivamos
+                  iniciativas de aprimoramento educacional, cultural,
+                  assistencial e tecnológico.
+                </p>
+                <p>
+                  Através de programas, projetos e ações concretas nas áreas
+                  ambiental, social, de saúde e de inclusão digital, buscamos
+                  criar novas possibilidades para quem mais precisa, atuando
+                  tanto em parcerias públicas quanto privadas.
+                </p>
+                <p>
+                  Nosso compromisso é simples: abrir caminhos onde antes havia
+                  barreiras.
+                </p>
+                <p class="about-closing">
+                  IAD - Transformando pela renovação do entendimento.
+                </p>
+              </div>
+            </div>
+            <aside class="intro-media" aria-label="Galeria de fotos do instituto">
+              <article class="media-card">
+                <img
+                  src="src/atividades/img3.jpg"
+                  alt="Criança realizando atividade educativa"
+                />
+              </article>
+              <article class="media-card">
+                <img
+                  src="src/atividades/img4.PNG"
+                  alt="Atendimento multiprofissional com criança"
+                />
+              </article>
+              <article class="media-card">
+                <img
+                  src="src/atividades/img5.jpg"
+                  alt="Atividade lúdica em ambiente de aprendizado"
+                />
+              </article>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section testimonials-video" id="relatos">
+        <div class="container">
+          <div class="testimonials-layout">
+            <div class="testimonials-copy">
+              <p class="section-subtitle">
+                Histórias reais de famílias que acompanham o desenvolvimento dos
+                seus filhos com o Instituto Atitude.
+              </p>
+              <p>
+                Cada depoimento representa uma jornada de cuidado, evolução e
+                confiança construída em parceria com nossa equipe
+                multiprofissional.
+              </p>
+            </div>
+            <div class="video-frame">
+              <video controls preload="auto" playsinline>
+                <source src="src/videos/relato.MP4" type="video/mp4" />
+                Seu navegador não suporta reprodução de vídeo.
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section specialties" id="especialidades">
+        <div class="container">
+          <h2>Especialidades</h2>
+          <p class="section-subtitle">
+            Cuidado multiprofissional integrado em todas as etapas do
+            desenvolvimento
+          </p>
+          <div class="grid cards-3">
+            <article class="card">
+              <h3>Psicologia Infantil</h3>
+              <p>
+                Desenvolvimento socioemocional, regulação comportamental e apoio
+                familiar.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Fonoaudiologia</h3>
+              <p>
+                Estimulação da comunicação, linguagem e habilidades de interação.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Terapia Ocupacional</h3>
+              <p>
+                Fortalecimento da autonomia em atividades do dia a dia e
+                integração sensorial.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Fisioterapia</h3>
+              <p>
+                Reabilitação funcional, fortalecimento motor e prevenção de
+                limitações no desenvolvimento.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Psicomotricidade</h3>
+              <p>
+                Estímulo da coordenação, percepção corporal e integração entre
+                movimento, emoção e aprendizagem.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Musicoterapia</h3>
+              <p>
+                Intervenções com música para favorecer comunicação, expressão
+                emocional e interação social.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Equoterapia</h3>
+              <p>
+                Terapia assistida por cavalos para promover equilíbrio, postura,
+                autonomia e desenvolvimento global.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Psicopedagogia</h3>
+              <p>
+                Apoio às dificuldades de aprendizagem com estratégias
+                personalizadas para cada criança.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Neuropsicopedagogia</h3>
+              <p>
+                Avaliação e intervenção focadas nas funções cognitivas e no
+                processo de aprendizagem.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Nutrição</h3>
+              <p>
+                Orientação alimentar para saúde integral, seletividade e suporte
+                ao desenvolvimento infantil.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section professionals" id="profissionais">
+        <div class="container">
+          <span class="professionals-badge">Profissionais</span>
+          <h2>Equipe especializada e acolhedora</h2>
+          <p class="professionals-subtitle">
+            Contamos com uma equipe multiprofissional formada por especialistas
+            em desenvolvimento infantil, aprendizagem, reabilitação e cuidado
+            integral, com atuação acolhedora e personalizada para cada família.
+          </p>
+          <div class="professionals-carousel" aria-label="Carrossel de profissionais">
+            <button
+              class="professionals-control prev"
+              id="professionalsPrev"
+              aria-label="Profissionais anteriores"
+            >
+              &#10094;
+            </button>
+            <div class="professionals-window">
+              <div class="professionals-track" id="professionalsTrack">
+                <article class="professional-card">
+                  <img src="src/profissionais/gabriela-souza.png" alt="Gabriela Brandão" />
+                  <h3>Gabriela Brandão</h3>
+                  <p>Psicóloga</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/agnes-guedes.png" alt="Agnes Guedes" />
+                  <h3>Agnes Guedes</h3>
+                  <p>Fonoaudióloga</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/ana-carolina-ligneul.png" alt="Ana Carolina Ligneul" />
+                  <h3>Ana Carolina Ligneul</h3>
+                  <p>Psicóloga</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/ana-lydia.png" alt="Ana Lydia Servais" />
+                  <h3>Ana Lydia Servais</h3>
+                  <p>Nutricionista</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/alex-reinaldo.png" alt="Alex Reinaldo Alves" />
+                  <h3>Alex Reinaldo Alves</h3>
+                  <p>Fisioterapeuta</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/tatiana-jerman.png" alt="Tatiana Jerman" />
+                  <h3>Tatiana Jerman</h3>
+                  <p>Psicóloga</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/mariana-reis.png" alt="Mariana Reis" />
+                  <h3>Mariana Reis</h3>
+                  <p>Neuropsicopedagoga</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/vitoria-da-silva.png" alt="Vitória Souza" />
+                  <h3>Vitória Souza</h3>
+                  <p>Nutricionista</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/carolina-bhering.png" alt="Carolina Bhering" />
+                  <h3>Carolina Bhering</h3>
+                  <p>Fonoaudióloga</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/juan-pedro.png" alt="Juan Pedro de Oliveira" />
+                  <h3>Juan Pedro de Oliveira</h3>
+                  <p>Fisioterapeuta</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/grazielle-gomes.png" alt="Grazielle Espíndola" />
+                  <h3>Grazielle Espíndola</h3>
+                  <p>Psicóloga</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/leticia-coutinho.png" alt="Leticia Coutinho" />
+                  <h3>Leticia Coutinho</h3>
+                  <p>Psicóloga</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/rosangela-da-silva.png" alt="Rosangela da Silva Ferreira" />
+                  <h3>Rosangela da Silva Ferreira</h3>
+                  <p>Terapeuta Ocupacional</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/stephany-emile.png" alt="Stephany Knupp" />
+                  <h3>Stephany Knupp</h3>
+                  <p>Psicóloga</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/daniele-clemente.png" alt="Daniele Clemente" />
+                  <h3>Daniele Clemente</h3>
+                  <p>Psicóloga</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/Juliana-alexandre.png" alt="Juliana Alexandre" />
+                  <h3>Juliana Alexandre</h3>
+                  <p>Psicóloga</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/daysi-mouta.png" alt="Daysi Mouta" />
+                  <h3>Daysi Mouta</h3>
+                  <p>Musicoterapeuta</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/fabiana-de-araujo.png" alt="Fabiana de Araújo" />
+                  <h3>Fabiana de Araújo</h3>
+                  <p>Psicopedagoga</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/rute-mendonca.png" alt="Rute Mendonça" />
+                  <h3>Rute Mendonça</h3>
+                  <p>Fisioterapeuta</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/camila-barroso.png" alt="Camila Barroso" />
+                  <h3>Camila Barroso</h3>
+                  <p>Psicopedagoga</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/Illa-railla.png" alt="Illa Railla de Sousa Ferreira" />
+                  <h3>Illa Railla de Sousa Ferreira</h3>
+                  <p>Fonoaudióloga</p>
+                </article>
+                <article class="professional-card">
+                  <img src="src/profissionais/maryellen-pelegrini.png" alt="Maryellen Pelegrini Mello" />
+                  <h3>Maryellen Pelegrini Mello</h3>
+                  <p>Psicopedagoga</p>
+                </article>
+              </div>
+            </div>
+            <button
+              class="professionals-control next"
+              id="professionalsNext"
+              aria-label="Próximos profissionais"
+            >
+              &#10095;
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section events" id="eventos">
+        <div class="container">
+          <h2>Eventos</h2>
+          <div class="grid cards-2">
+            <article class="event-card">
+              <span class="event-date">20 MAI</span>
+              <div>
+                <h3>Seminário Atitude em Ação</h3>
+                <p>
+                  Encontro sobre inovação em projetos educacionais e sociais com
+                  especialistas convidados.
+                </p>
+              </div>
+            </article>
+            <article class="event-card">
+              <span class="event-date">08 JUN</span>
+              <div>
+                <h3>Oficina de Planejamento Estratégico</h3>
+                <p>
+                  Formação prática para equipes que desejam estruturar metas,
+                  ações e indicadores de impacto.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contato">
+        <div class="container">
+          <h2>Contato</h2>
+          <div class="contact-grid">
+            <div>
+              <p><strong>E-mail:</strong> institutoatitudedsn@gmail.com</p>
+              <p><strong>WhatsApp:</strong> (021) 99529-5995</p>
+              <p><strong>Atendimento:</strong> Segunda a sexta, 08h às 18h</p>
+            </div>
+            <form
+              class="contact-form"
+              action="https://formsubmit.co/institutoatitudedsn@gmail.com"
+              method="POST"
+            >
+              <input type="hidden" name="_subject" value="Novo contato pelo site - IAD" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="text" name="nome" placeholder="Seu nome" required />
+              <input type="email" name="email" placeholder="Seu e-mail" required />
+              <textarea
+                name="mensagem"
+                rows="4"
+                placeholder="Sua mensagem"
+                required
+              ></textarea>
+              <button type="submit">Enviar mensagem</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section location" id="localizacao">
+        <div class="container">
+          <h2>Localização</h2>
+          <p>Travessa Alexandre Fleming, 100 - Teresópolis, Rio de Janeiro, Brasil</p>
+          <div class="map-wrapper">
+            <iframe
+              title="Mapa do Instituto Atitude de Desenvolvimento"
+              src="https://www.google.com/maps?q=Travessa+Alexandre+Fleming,+100,+Teres%C3%B3polis,+Rio+de+Janeiro,+Brasil&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          © 2026 Instituto Atitude de Desenvolvimento. Todos os direitos
+          reservados.
+        </p>
+      </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+      ↑
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
