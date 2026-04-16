@@ -64,6 +64,9 @@ const lightboxImage = document.getElementById("lightboxImage");
 const lightboxClose = document.getElementById("lightboxClose");
 const lightboxPrev = document.getElementById("lightboxPrev");
 const lightboxNext = document.getElementById("lightboxNext");
+const galleryVideoLightbox = document.getElementById("galleryVideoLightbox");
+const videoLightboxClose = document.getElementById("videoLightboxClose");
+const videoLightboxPlayer = document.getElementById("videoLightboxPlayer");
 
 if (
   galleryExplorer &&
@@ -72,7 +75,10 @@ if (
   lightboxImage &&
   lightboxClose &&
   lightboxPrev &&
-  lightboxNext
+  lightboxNext &&
+  galleryVideoLightbox &&
+  videoLightboxClose &&
+  videoLightboxPlayer
 ) {
   const firstEventMediaListRaw = `PHOTO-2026-04-13-09-48-50.jpg
 PHOTO-2026-04-13-09-48-54(1).jpg
@@ -245,6 +251,22 @@ VIDEO-2026-04-13-09-54-06.mp4`;
     galleryExplorer.innerHTML = "";
   };
 
+  const openVideoLightbox = (videoUrl) => {
+    videoLightboxPlayer.src = videoUrl;
+    galleryVideoLightbox.classList.add("open");
+    galleryVideoLightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    videoLightboxPlayer.play().catch(() => {});
+  };
+
+  const closeVideoLightbox = () => {
+    galleryVideoLightbox.classList.remove("open");
+    galleryVideoLightbox.setAttribute("aria-hidden", "true");
+    videoLightboxPlayer.pause();
+    videoLightboxPlayer.removeAttribute("src");
+    document.body.style.overflow = "";
+  };
+
   let currentPhotos = [];
   let currentPhotoIndex = 0;
 
@@ -353,6 +375,11 @@ VIDEO-2026-04-13-09-54-06.mp4`;
         playButton.textContent = "▶";
 
         playButton.addEventListener("click", () => {
+          if (window.innerWidth <= 820) {
+            openVideoLightbox(mediaUrl);
+            return;
+          }
+
           video.controls = true;
           video.muted = false;
           video
@@ -463,9 +490,14 @@ VIDEO-2026-04-13-09-54-06.mp4`;
   lightboxClose.addEventListener("click", closeLightbox);
   lightboxPrev.addEventListener("click", () => goToPhoto(-1));
   lightboxNext.addEventListener("click", () => goToPhoto(1));
+  videoLightboxClose.addEventListener("click", closeVideoLightbox);
 
   galleryLightbox.addEventListener("click", (event) => {
     if (event.target === galleryLightbox) closeLightbox();
+  });
+
+  galleryVideoLightbox.addEventListener("click", (event) => {
+    if (event.target === galleryVideoLightbox) closeVideoLightbox();
   });
 
   window.addEventListener("keydown", (event) => {
@@ -473,6 +505,11 @@ VIDEO-2026-04-13-09-54-06.mp4`;
     if (event.key === "Escape") closeLightbox();
     if (event.key === "ArrowLeft") goToPhoto(-1);
     if (event.key === "ArrowRight") goToPhoto(1);
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (!galleryVideoLightbox.classList.contains("open")) return;
+    if (event.key === "Escape") closeVideoLightbox();
   });
 }
 
