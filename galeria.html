@@ -35,7 +35,6 @@
           <a href="index.html#quem-somos">Quem Somos</a>
           <a href="index.html#especialidades">Especialidades</a>
           <a href="index.html#profissionais">Profissionais</a>
-          <a href="index.html#eventos">Eventos</a>
           <a href="index.html#contato">Contato</a>
           <a class="mobile-only-link" href="index.html#localizacao">Localização</a>
           <a href="galeria.html">Galeria</a>
@@ -45,13 +44,19 @@
     </header>
 
     <main>
-      <section class="section intro">
+      <section class="section intro gallery-hero">
         <div class="container">
           <h2>Galeria</h2>
           <p class="section-subtitle">
-            Em breve, este espaço reunirá fotos de atendimentos, ações e momentos especiais do
-            Instituto Atitude.
+            Registros dos nossos encontros, atividades e momentos especiais com as famílias.
           </p>
+        </div>
+      </section>
+
+      <section class="section gallery-section">
+        <div class="container">
+          <div class="gallery-breadcrumb" id="galleryBreadcrumb"></div>
+          <div id="galleryExplorer"></div>
         </div>
       </section>
     </main>
@@ -61,6 +66,13 @@
         <p>© 2026 Instituto Atitude de Desenvolvimento. Todos os direitos reservados.</p>
       </div>
     </footer>
+
+    <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Fechar">×</button>
+      <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Foto anterior">‹</button>
+      <img id="lightboxImage" alt="Foto ampliada da galeria" />
+      <button class="lightbox-nav next" id="lightboxNext" aria-label="Próxima foto">›</button>
+    </div>
 
     <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</button>
 
