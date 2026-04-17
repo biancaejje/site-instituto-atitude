@@ -317,6 +317,14 @@ VIDEO-2026-04-13-09-54-06.mp4`;
     return wrapper;
   };
 
+  const createHomeButton = () => {
+    const homeButton = document.createElement("a");
+    homeButton.className = "gallery-back-button";
+    homeButton.textContent = "INÍCIO";
+    homeButton.href = "index.html";
+    return homeButton;
+  };
+
   const renderMediaGrid = (eventItem) => {
     const eventArticle = document.createElement("article");
     eventArticle.className = "gallery-event";
@@ -480,6 +488,11 @@ VIDEO-2026-04-13-09-54-06.mp4`;
   const renderFolders = () => {
     clearExplorer();
     setBreadcrumb(["Galeria"]);
+
+    const rootActions = document.createElement("div");
+    rootActions.className = "gallery-top-actions";
+    rootActions.appendChild(createHomeButton());
+    galleryExplorer.appendChild(rootActions);
 
     const foldersGrid = document.createElement("div");
     foldersGrid.className = "gallery-folder-grid";

@@ -480,6 +480,13 @@ body {
   margin-bottom: 1.4rem;
 }
 
+.gallery-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+}
+
 .gallery-event-title-wrap {
   min-width: 0;
 }
@@ -493,6 +500,7 @@ body {
   border-radius: 10px;
   background: linear-gradient(135deg, var(--green-800), var(--green-700));
   color: var(--white);
+  text-decoration: none;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.04em;
