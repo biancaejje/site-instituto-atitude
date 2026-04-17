@@ -360,10 +360,20 @@ VIDEO-2026-04-13-09-54-06.mp4`;
         video.className = "gallery-video-preview";
         video.src = mediaUrl;
         video.controls = false;
-        video.preload = "metadata";
+        video.preload = "auto";
         video.muted = true;
         video.playsInline = true;
         video.setAttribute("aria-label", `Vídeo do evento ${eventItem.title}`);
+
+        // Em alguns navegadores mobile, o primeiro frame só aparece
+        // quando fazemos um pequeno seek após carregar os metadados.
+        video.addEventListener("loadedmetadata", () => {
+          try {
+            if (video.currentTime === 0 && Number.isFinite(video.duration) && video.duration > 0) {
+              video.currentTime = Math.min(0.1, video.duration / 2);
+            }
+          } catch (_) {}
+        });
 
         const playButton = document.createElement("button");
         playButton.className = "gallery-video-play-btn";
