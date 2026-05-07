@@ -195,7 +195,6 @@ body {
   inset: 0;
   transform: translateX(100%);
   opacity: 0;
-  visibility: hidden;
   pointer-events: none;
   transition: transform 400ms ease-in-out, opacity 400ms ease-in-out;
 }
@@ -203,7 +202,6 @@ body {
 .slide.active {
   transform: translateX(0);
   opacity: 1;
-  visibility: visible;
   pointer-events: auto;
   z-index: 2;
 }
@@ -211,26 +209,22 @@ body {
 .slide.is-entering-from-right {
   transform: translateX(100%);
   opacity: 1;
-  visibility: visible;
 }
 
 .slide.is-entering-from-left {
   transform: translateX(-100%);
   opacity: 1;
-  visibility: visible;
 }
 
 .slide.is-exiting-left {
   transform: translateX(-100%);
   opacity: 1;
-  visibility: visible;
   z-index: 1;
 }
 
 .slide.is-exiting-right {
   transform: translateX(100%);
   opacity: 1;
-  visibility: visible;
   z-index: 1;
 }
 
