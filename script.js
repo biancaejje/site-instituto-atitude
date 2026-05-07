@@ -538,13 +538,37 @@ VIDEO-2026-04-13-09-54-06.mp4`;
 
 let currentSlide = 0;
 let autoPlayTimer;
+let isCarouselAnimating = false;
+
+function getDirectionClass(direction) {
+  if (direction < 0) {
+    return {
+      entering: "is-entering-from-left",
+      exiting: "is-exiting-right",
+    };
+  }
+
+  return {
+    entering: "is-entering-from-right",
+    exiting: "is-exiting-left",
+  };
+}
+
+function clearSlideMotionClasses(slide) {
+  slide.classList.remove(
+    "is-entering-from-right",
+    "is-entering-from-left",
+    "is-exiting-left",
+    "is-exiting-right"
+  );
+}
 
 function renderDots() {
   slides.forEach((_, index) => {
     const dot = document.createElement("button");
     dot.setAttribute("aria-label", `Ir para o slide ${index + 1}`);
     dot.addEventListener("click", () => {
-      goToSlide(index);
+      goToSlide(index, index > currentSlide ? 1 : -1);
       resetAutoPlay();
     });
     dotsContainer.appendChild(dot);
@@ -553,6 +577,7 @@ function renderDots() {
 
 function updateCarousel() {
   slides.forEach((slide, index) => {
+    clearSlideMotionClasses(slide);
     slide.classList.toggle("active", index === currentSlide);
   });
 
@@ -562,17 +587,51 @@ function updateCarousel() {
   });
 }
 
-function goToSlide(index) {
-  currentSlide = (index + slides.length) % slides.length;
-  updateCarousel();
+function goToSlide(index, direction = 1) {
+  const nextSlideIndex = (index + slides.length) % slides.length;
+
+  if (nextSlideIndex === currentSlide) return;
+  if (isCarouselAnimating) return;
+
+  const currentSlideElement = slides[currentSlide];
+  const nextSlideElement = slides[nextSlideIndex];
+  const { entering, exiting } = getDirectionClass(direction);
+
+  isCarouselAnimating = true;
+  clearSlideMotionClasses(currentSlideElement);
+  clearSlideMotionClasses(nextSlideElement);
+
+  nextSlideElement.classList.add("active", entering);
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      currentSlideElement.classList.add(exiting);
+      nextSlideElement.classList.remove(entering);
+    });
+  });
+
+  const onTransitionEnd = (event) => {
+    if (event.target !== nextSlideElement || event.propertyName !== "transform") return;
+
+    nextSlideElement.removeEventListener("transitionend", onTransitionEnd);
+    currentSlideElement.classList.remove("active", exiting);
+    clearSlideMotionClasses(currentSlideElement);
+    clearSlideMotionClasses(nextSlideElement);
+
+    currentSlide = nextSlideIndex;
+    isCarouselAnimating = false;
+    updateCarousel();
+  };
+
+  nextSlideElement.addEventListener("transitionend", onTransitionEnd);
 }
 
 function nextSlide() {
-  goToSlide(currentSlide + 1);
+  goToSlide(currentSlide + 1, 1);
 }
 
 function prevSlide() {
-  goToSlide(currentSlide - 1);
+  goToSlide(currentSlide - 1, -1);
 }
 
 function startAutoPlay() {
