@@ -280,6 +280,16 @@ body {
   background: #bcffdc;
 }
 
+@media (pointer: coarse) {
+  .carousel-dots button {
+    width: 44px;
+    height: 44px;
+    padding: 17px;
+    box-sizing: border-box;
+    background-clip: content-box;
+  }
+}
+
 .section {
   padding: 4rem 0;
 }
